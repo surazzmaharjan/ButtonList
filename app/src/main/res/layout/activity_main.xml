@@ -67,6 +67,17 @@
         android:text="Frame Layout"
         />
 
+
+    <Button
+        android:id="@+id/btn8"
+        style="@style/btn_style"
+        android:background="@drawable/button_background"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Recycle View "
+        />
+
+
     <Button
         android:id="@+id/btn7"
         style="@style/btn_style"

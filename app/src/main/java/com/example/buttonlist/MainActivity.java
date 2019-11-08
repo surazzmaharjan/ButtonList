@@ -11,7 +11,7 @@ import android.widget.TableLayout;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    Button buttonLL,buttonGL,buttonRL,buttonCL,buttonTL,buttonFL,buttonList;
+    Button buttonLL,buttonGL,buttonRL,buttonCL,buttonTL,buttonFL,buttonList,buttonRecycle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonTL = findViewById(R.id.btn5);
         buttonFL = findViewById(R.id.btn6);
         buttonList = findViewById(R.id.btn7);
+        buttonRecycle = findViewById(R.id.btn8);
 
 
         buttonCL.setOnClickListener(this);
@@ -35,6 +36,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonTL.setOnClickListener(this);
         buttonFL.setOnClickListener(this);
         buttonList.setOnClickListener(this);
+        buttonRecycle.setOnClickListener(this);
 
     }
 
@@ -59,9 +61,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(intent);
         }
 
-        if (view.getId()==R.id.btn4)
+        if (view.getId()==R.id.btn8)
         {
-
+            Intent intent = new Intent(this, Recycle_View.class);
+            startActivity(intent);
         }
         if (view.getId()==R.id.btn3)
         {

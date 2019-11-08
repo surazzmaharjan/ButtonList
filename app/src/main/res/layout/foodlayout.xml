@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+
+    <ImageView
+        android:id="@+id/foodimage"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:scaleType="fitXY"
+        android:layout_marginRight="20dp"
+        android:src="@drawable/burger"/>
+    <TextView
+        android:id="@+id/foodname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/foodimage"
+        android:text="Burger"
+        android:textSize="25dp"
+        />
+
+    <TextView
+        android:id="@+id/foodcategory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/foodimage"
+        android:layout_below="@+id/foodname"
+        android:text="Veg"
+        android:textSize="25dp"/>
+
+    <TextView
+        android:id="@+id/rate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/foodimage"
+        android:layout_below="@+id/foodcategory"
+        android:text="Rs 500"
+        android:textSize="25dp"/>
+
+</RelativeLayout>
