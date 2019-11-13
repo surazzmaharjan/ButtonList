@@ -9,20 +9,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Recycle_View"></activity>
-        <activity android:name=".individualDetail" />
-        <activity android:name=".view_details_listVIew" />
-        <activity android:name=".listView_activity" />
-        <activity android:name=".L_Layout" />
-        <activity android:name=".TableListActivity" />
-        <activity android:name=".FL_Activity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".Tab_Layout_Activity"></activity>
+        <activity android:name=".FragmentActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".SplashActivity"></activity>
+        <activity android:name=".Recycle_View" />
+        <activity android:name=".individualDetail" />
+        <activity android:name=".view_details_listVIew" />
+        <activity android:name=".listView_activity" />
+        <activity android:name=".L_Layout" />
+        <activity android:name=".TableListActivity" />
+        <activity android:name=".FL_Activity" />
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

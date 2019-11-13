@@ -30,7 +30,7 @@ public class Recycle_View extends AppCompatActivity {
         foods.add(new Food("chowmein","chicken","Rs 1500",R.drawable.burger));
         foods.add(new Food("Pesi","cold drinks","Rs 5400",R.drawable.burger));
 
-        MyRvAdapter adapter = new MyRvAdapter(foods);
+        MyRvAdapter adapter = new MyRvAdapter(foods,this);
         RecyclerView.LayoutManager layoutManager= new LinearLayoutManager(this);
 
 

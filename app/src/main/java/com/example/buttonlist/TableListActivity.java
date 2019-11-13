@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -167,6 +168,12 @@ public class TableListActivity extends AppCompatActivity implements RadioGroup.O
                     userList.add(new User(name,gender,dob,country,phone,email));
 //                    Toast.makeText(this,userList.get(0).getName(), Toast.LENGTH_SHORT).show();
                 }
+
+
+//                String uri = "@drawable/"+img;
+//                int resID = getResources().getIdentifier(uri,null,getPackageName());
+//                Drawable drawable = getResources().getDrawable(resID);
+//                imageView.setImageDrawable(drawable);
 
             }
 

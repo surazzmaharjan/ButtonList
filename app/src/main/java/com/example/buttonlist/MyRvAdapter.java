@@ -1,10 +1,12 @@
 package com.example.buttonlist;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -17,9 +19,13 @@ import java.util.List;
 public class MyRvAdapter extends RecyclerView.Adapter<MyRvAdapter.MyHolder> {
 
     List<Food> foodlist = new ArrayList<>();
+    Context context;
 
-    public MyRvAdapter(List<Food> foodlist) {
+    public MyRvAdapter(List<Food> foodlist,Context context)
+    {
         this.foodlist = foodlist;
+        this.context=context;
+
     }
 
     @NonNull
@@ -33,11 +39,19 @@ public class MyRvAdapter extends RecyclerView.Adapter<MyRvAdapter.MyHolder> {
     @Override
     public void onBindViewHolder(@NonNull MyHolder holder, int position) {
 
-        Food food = foodlist.get(position);
+        final  Food food = foodlist.get(position);
+
         holder.foodname.setText(food.getFoodname());
         holder.foodrate.setText(food.getRate());
         holder.foodcategory.setText(food.getCategory());
         holder.imageview.setImageResource(food.getImage());
+
+        holder.foodname.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(context,food.getFoodname(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override
