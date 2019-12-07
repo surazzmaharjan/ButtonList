@@ -8,10 +8,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TableLayout;
 
+import java.io.File;
+
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    Button buttonLL,buttonGL,buttonRL,buttonCL,buttonTL,buttonFL,buttonList,buttonRecycle;
+    Button buttonLL,buttonGL,buttonRL,buttonCL,buttonTL,buttonFL,buttonList,buttonRecycle,btnshared,btnimplicit,btnwordgame;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +29,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonFL = findViewById(R.id.btn6);
         buttonList = findViewById(R.id.btn7);
         buttonRecycle = findViewById(R.id.btn8);
+        btnshared = findViewById(R.id.btn9);
+        btnimplicit = findViewById(R.id.btn10);
+        btnwordgame = findViewById(R.id.btn12);
 
+        btnwordgame.setOnClickListener(this);
+
+        btnshared.setOnClickListener(this);
+        btnimplicit.setOnClickListener(this);
 
         buttonCL.setOnClickListener(this);
         buttonLL.setOnClickListener(this);
@@ -61,6 +70,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(intent);
         }
 
+        if (view.getId()==R.id.btn12)
+        {
+            Intent intent = new Intent(this, WordActivity.class);
+            startActivity(intent);
+        }
+
         if (view.getId()==R.id.btn8)
         {
             Intent intent = new Intent(this, Recycle_View.class);
@@ -68,14 +83,34 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         if (view.getId()==R.id.btn3)
         {
-
+            Intent intent = new Intent(this, ToolbarActivity.class);
+            startActivity(intent);
         }
 
         if (view.getId()==R.id.btn2)
         {
-
+            Intent intent = new Intent(this, FileActivity.class);
+            startActivity(intent);
 
         }
+
+
+        if (view.getId()==R.id.btn9)
+        {
+            Intent intent = new Intent(this, SharedPreActivity.class);
+            startActivity(intent);
+
+        }
+
+        if (view.getId()==R.id.btn10)
+        {
+            Intent intent = new Intent(this, ImplicitActivity.class);
+            startActivity(intent);
+
+        }
+
+
+
         if (view.getId()==R.id.btn1)
         {
             Intent intent = new Intent(this, L_Layout.class);

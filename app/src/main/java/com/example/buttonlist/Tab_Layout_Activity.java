@@ -25,6 +25,12 @@ public class Tab_Layout_Activity extends AppCompatActivity {
 
         FragmentManager fm = getSupportFragmentManager();
         MyVpAdapter adapter = new MyVpAdapter(fm);
+
+
+        adapter.addFragment(new BasicFragment(),"First");
+        adapter.addFragment(new SecondFragment(),"Second");
         viewPager.setAdapter(adapter);
+
+        tablayout.setupWithViewPager(viewPager);
     }
 }

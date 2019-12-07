@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/filename"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"/>
+
+    <Button
+        android:id="@+id/btnsave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save"/>
+
+    <Button
+        android:id="@+id/btnload"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Load"/>
+
+    <Button
+        android:id="@+id/btnsaveexternal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save From External"
+        android:onClick="askPermission"
+        />
+
+    <Button
+        android:id="@+id/btnloadexternal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Load from External"/>
+
+
+</LinearLayout>

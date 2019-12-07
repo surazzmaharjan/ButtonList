@@ -34,4 +34,11 @@ dependencies {
     //tablayout
     implementation 'com.google.android.material:material:1.0.0'
 
+    //SQ lite Database
+
+
+
+    //cardview
+    implementation 'androidx.cardview:cardview:1.0.0'
+
 }
