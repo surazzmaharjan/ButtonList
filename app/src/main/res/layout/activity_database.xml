@@ -41,5 +41,18 @@
         android:layout_height="wrap_content"
         android:text="Save"/>
 
+    <Button
+        android:id="@+id/btnSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Search Student"/>
+
+
+    <Button
+        android:id="@+id/btnAllStudent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="All Students"/>
+
 
 </LinearLayout>

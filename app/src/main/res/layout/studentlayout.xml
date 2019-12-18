@@ -8,6 +8,7 @@
     >
 
     <LinearLayout
+        android:id="@+id/mainlayout"
         android:orientation="horizontal"
         android:layout_margin="8dp"
         android:background="@android:color/white"
@@ -57,8 +58,23 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
-
         </LinearLayout>
+    <RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/editstudent"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="Edit"/>
+
+        <Button
+            android:id="@+id/deletestudent"
+            android:layout_below="@+id/editstudent"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="Delete"/>
+    </RelativeLayout>
 
     </LinearLayout>
 

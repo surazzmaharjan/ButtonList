@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".StudentSearchActivity">
+
+
+    <com.mancj.materialsearchbar.MaterialSearchBar
+        android:id="@+id/search_bar"
+        android:layout_alignParentTop="true"
+        app:mt_speechMode="false"
+        app:mt_hint="Search By Name"
+        app:mt_placeholder="Search Students.."
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_search"
+            android:layout_marginTop="50dp"
+            android:layout_below="@+id/search_bar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </com.mancj.materialsearchbar.MaterialSearchBar>
+
+
+
+</RelativeLayout>

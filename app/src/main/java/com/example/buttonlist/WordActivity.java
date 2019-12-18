@@ -1,6 +1,8 @@
 package com.example.buttonlist;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -15,9 +17,12 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.buttonlist.model.Food;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
 
 public class WordActivity extends AppCompatActivity {
 
@@ -27,6 +32,7 @@ public class WordActivity extends AppCompatActivity {
     String[] words={"apple","ee","ff"};
     SharedPreferences sp,spu;
     SharedPreferences.Editor editor,editoru;
+    RecyclerView recyclerView;
     int level =0;
     int sub=0;
 
@@ -63,12 +69,12 @@ public class WordActivity extends AppCompatActivity {
 
                     editor.putInt("gamelevel", level);
 
-                    sub=words.length-1;
+                    sub=level+1;
 
                     Log.d("level","total "+words.length);
                     Log.d("level","level "+level);
 
-                    if(level==sub) {
+                    if(words.length==sub) {
                         Toast.makeText(getApplicationContext(), "Congratulations! You have finished all levels", Toast.LENGTH_SHORT).show();
                         level = 0;
                         editor.putInt("gamelevel", level);
@@ -104,13 +110,26 @@ public class WordActivity extends AppCompatActivity {
             }
         });
 
+
+
+
+
+
+
+
     }
 
     private void showWord(int i){
         Character[] word = shuffleWord(words[i]);
 
-        ArrayAdapter<Character> adapter = new ArrayAdapter<Character>(WordActivity.this,R.layout.spinner_values,word);
-        listView.setAdapter(adapter);
+
+        recyclerView = findViewById(R.id.rvwoods);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(new ProgrammingAdapter(words));
+
+
+        ArrayAdapter<Character> adapter2 = new ArrayAdapter<Character>(WordActivity.this,R.layout.spinner_values,word);
+        listView.setAdapter(adapter2);
 
     }
 

@@ -37,8 +37,18 @@ dependencies {
     //SQ lite Database
 
 
-
     //cardview
     implementation 'androidx.cardview:cardview:1.0.0'
 
+    implementation 'com.github.mancj:MaterialSearchBar:+'
+
+
+    //retrofit
+
+    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+
+
+
+    implementation 'com.squareup.picasso:picasso:2.5.2'
 }

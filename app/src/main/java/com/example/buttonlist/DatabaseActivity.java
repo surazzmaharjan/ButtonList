@@ -2,6 +2,7 @@ package com.example.buttonlist;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -17,7 +18,7 @@ import java.util.List;
 public class DatabaseActivity extends AppCompatActivity {
 
     EditText editTextName,editTextEmail,editTextPhone;
-    Button btnSave;
+    Button btnSave,btnsearch,btnallstudent;
     DBHelper dbHelper;
 
     @Override
@@ -30,8 +31,30 @@ public class DatabaseActivity extends AppCompatActivity {
         editTextPhone = findViewById(R.id.stphone);
 
         btnSave = findViewById(R.id.btnStSave);
+        btnsearch = findViewById(R.id.btnSearch);
+        btnallstudent = findViewById(R.id.btnAllStudent);
+
+
+        btnallstudent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(DatabaseActivity.this, AllStudentActivity.class);
+                startActivity(intent);
+            }
+        });
 
         dbHelper = new DBHelper(this);
+
+        btnsearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (view.getId()==R.id.btnSearch)
+                {
+                    Intent intent = new Intent(DatabaseActivity.this,StudentSearchActivity.class);
+                    startActivity(intent);
+                }
+            }
+        });
 
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,12 +65,13 @@ public class DatabaseActivity extends AppCompatActivity {
 
              Student student = new Student(0,n,e,p);
 
-            if(dbHelper.addStudent(student)){
+            if(dbHelper.addStudents(student)){
                 Toast.makeText(DatabaseActivity.this, "Successfully saved", Toast.LENGTH_SHORT).show();
             }
 
             }
         });
+
 
         List<Student> students = dbHelper.getStudents();
         for(Student student:students){
@@ -58,4 +82,7 @@ public class DatabaseActivity extends AppCompatActivity {
 
         }
     }
+
+
+
 }
