@@ -42,7 +42,7 @@ public class FlagApiActivity extends AppCompatActivity {
     ImageView imageView;
     Retrofit retrofit;
     EmployeeInterface employeeInterface;
-    Button buttonChoose,buttonAdd;
+    Button buttonChoose, buttonUpload;
     Uri uri;
     String imgPath;
     MultipartBody.Part image;
@@ -55,7 +55,7 @@ public class FlagApiActivity extends AppCompatActivity {
         imageView = findViewById(R.id.tvImage);
 
 
-        buttonAdd = findViewById(R.id.btnUploadImg);
+        buttonUpload = findViewById(R.id.btnUploadImg);
         buttonChoose = findViewById(R.id.btnaddImg);
 
         getInstance();
@@ -71,7 +71,7 @@ public class FlagApiActivity extends AppCompatActivity {
             }
         });
 
-        buttonAdd.setOnClickListener(new View.OnClickListener() {
+        buttonUpload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 uploadImage(image);
