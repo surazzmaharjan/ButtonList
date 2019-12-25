@@ -55,7 +55,7 @@ public interface EmployeeInterface {
     Call<Void> addCountry(@Field("country")String c,@Field("file") String f);
 
 
-    //try
+    
     @POST("addcountry")
     Call<Void> addCountryByModel(@Body Flag flag);
 }
