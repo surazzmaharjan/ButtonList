@@ -31,5 +31,17 @@ tools:context=".FlagApiActivity">
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="Add Image"/>
+    <EditText
+        android:id="@+id/etCountry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Country"/>
+
+    <Button
+        android:id="@+id/btnaddCountry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Save "/>
 
 </LinearLayout>

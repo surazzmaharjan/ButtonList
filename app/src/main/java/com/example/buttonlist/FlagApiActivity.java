@@ -16,6 +16,7 @@ import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -39,13 +40,15 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class FlagApiActivity extends AppCompatActivity {
 
     TextView textView;
+    EditText editText;
     ImageView imageView;
     Retrofit retrofit;
     EmployeeInterface employeeInterface;
-    Button buttonChoose, buttonUpload;
+    Button buttonChoose, buttonUpload,btnSave;
     Uri uri;
     String imgPath;
     MultipartBody.Part image;
+    String file_name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,14 +56,27 @@ public class FlagApiActivity extends AppCompatActivity {
         setContentView(R.layout.activity_flag_api);
         textView = findViewById(R.id.tvCountry);
         imageView = findViewById(R.id.tvImage);
+        editText = findViewById(R.id.etCountry);
 
 
         buttonUpload = findViewById(R.id.btnUploadImg);
+        btnSave = findViewById(R.id.btnaddCountry);
         buttonChoose = findViewById(R.id.btnaddImg);
 
         getInstance();
         getCountryByID(20);
 //        stuList();
+
+        btnSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String c= editText.getText().toString();
+                Toast.makeText(FlagApiActivity.this, file_name, Toast.LENGTH_SHORT).show();
+               Flag fg = new Flag(0,c,file_name);
+                addCountryByModel(fg);
+                 addCountry("hello","hello.png");
+            }
+        });
 
         buttonChoose.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -135,6 +151,7 @@ public class FlagApiActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<Flag> call, Response<Flag> response) {
                 Toast.makeText(FlagApiActivity.this, response.body().getFile()+"Uploaded", Toast.LENGTH_SHORT).show();
+                file_name = response.body().getFile();
             }
 
             @Override
@@ -177,6 +194,44 @@ public class FlagApiActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<Flag> call, Throwable t) {
                 Log.d("Ex",t.getMessage());
+            }
+        });
+    }
+
+     private void addCountry(String country,String file){
+
+        Call<Void> addC = employeeInterface.addCountry(country,file);
+
+        addC.enqueue(new Callback<Void>() {
+            @Override
+            public void onResponse(Call<Void> call, Response<Void> response) {
+                Toast.makeText(FlagApiActivity.this, "Added", Toast.LENGTH_SHORT).show();
+
+            }
+
+            @Override
+            public void onFailure(Call<Void> call, Throwable t) {
+                Log.d("Ex",t.getMessage());
+
+            }
+        });
+    }
+
+    private void addCountryByModel(Flag flag){
+
+        Call<Void> addC = employeeInterface.addCountryByModel(flag);
+
+        addC.enqueue(new Callback<Void>() {
+            @Override
+            public void onResponse(Call<Void> call, Response<Void> response) {
+                Toast.makeText(FlagApiActivity.this, "Added by Model", Toast.LENGTH_SHORT).show();
+
+            }
+
+            @Override
+            public void onFailure(Call<Void> call, Throwable t) {
+                Log.d("Ex",t.getMessage());
+
             }
         });
     }

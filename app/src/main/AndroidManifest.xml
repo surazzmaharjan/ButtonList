@@ -16,11 +16,7 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity android:name=".FlagApiActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".RetrofitActivity">
 
@@ -45,7 +41,13 @@
         <activity android:name=".individualDetail" />
         <activity android:name=".view_details_listVIew" />
         <activity android:name=".listView_activity" />
-        <activity android:name=".L_Layout" />
+        <activity android:name=".L_Layout" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".TableListActivity" />
         <activity android:name=".FL_Activity" />
         <activity android:name=".MainActivity" />
