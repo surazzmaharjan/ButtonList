@@ -73,7 +73,9 @@ public class FlagApiActivity extends AppCompatActivity {
                 String c= editText.getText().toString();
                 Toast.makeText(FlagApiActivity.this, file_name, Toast.LENGTH_SHORT).show();
                Flag fg = new Flag(0,c,file_name);
+
                 addCountryByModel(fg);
+
                  addCountry("hello","hello.png");
             }
         });
